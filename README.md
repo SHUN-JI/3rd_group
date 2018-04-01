@@ -71,7 +71,7 @@ GCC version:  gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9)
 ```
 最重要的NVCC
 ```
-nvcc -V
+＄ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2017 NVIDIA Corporation
 Built on Fri_Sep__1_21:08:03_CDT_2017
