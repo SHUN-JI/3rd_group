@@ -43,8 +43,40 @@ exec bash
 ```
 然後檢查一下
 ```
-cat /proc/driver/nvidia/version 或者 nvidia-smi -a
+＄ cat /proc/driver/nvidia/version
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.81  Sat Sep  2 02:43:11 PDT 2017
+GCC version:  gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
+
+＄ nvidia-smi （-a）
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Quadro K620         Off  | 00000000:01:00.0 Off |                  N/A |
+| 34%   45C    P0     2W /  30W |      0MiB /  1998MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  Quadro K620         Off  | 00000000:03:00.0 Off |                  N/A |
+|  0%   36C    P0     1W /  30W |      0MiB /  2000MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+
+```
+最重要的NVCC
+```
 nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2017 NVIDIA Corporation
+Built on Fri_Sep__1_21:08:03_CDT_2017
+Cuda compilation tools, release 9.0, V9.0.176
+
 ```
 都有與硬體資訊相同的話就大功告成
 
