@@ -52,3 +52,41 @@ nvcc -V
 ### 安裝Nvidia-docker 
 
 參考[官方](https://github.com/NVIDIA/nvidia-docker)
+
+### 測試軟硬體
+
+NV_GPU 依自己的需求去下,但官方似乎已不建議使用此參數,如果不下的話,會全部GPU都吃,新的下法後面會提到
+```
+(NV_GPU=?) nvidia-docker run --rm -ti ryanolson/device-query
+```
+若有跑出正確資訊,則軟硬體環境皆沒問題,且Nvidia-docker環境也正常,感謝黃老大!
+
+若有跑出
+```
+CUDA driver version is insufficient for CUDA runtime version
+```
+檢查一下你的驅動可能過舊,不可低於runtime_driver
+
+### 試跑Tensorflow
+
+簡單撈了一份IMG來試
+```
+nvidia-docker run -it (-p 8888:8888) gcr.io/tensorflow/tensorflow:latest-gpu-py3 /bin/bash
+```
+8888port是jupyter要用的,暫且不管他,也可不下
+
+進來後可以先指定GPU
+```
+export CUDA_VISIBLE_DEVICES='?'
+```
+
+找了一份測試專案 來源為:[tobegit3hub](https://github.com/tobegit3hub/tensorflow_template_application)
+```
+curl https://codeload.github.com/tobegit3hub/deep_recommend_system/zip/master -o test.zip
+unzip test.zip
+cd tensorflow_template_application-master/
+```
+接著按照此作者提供的流程即可
+
+### Contribution
+以上操作流程皆從網路上整理且自己修改指令而來,感謝其他作者,也歡迎自由編輯,若有錯誤或不清楚之處也歡迎發issue告知
