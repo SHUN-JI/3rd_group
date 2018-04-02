@@ -33,8 +33,8 @@ sudo ./cuda_9.0.176_384.81_linux-run --silent --driver --toolkit
 
 安裝完後應該要有成功回報,然後把LIBRARY抓出來,把以下寫進.bashrc
 ```
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-9.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
 ```
 
 接著看你要重登或是
