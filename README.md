@@ -1,5 +1,4 @@
 # 3rd_group
-research of TF,docker and k8s
 
 ## 導覽
 以下操作皆在Ubuntu 16.04環境下進行,並已接上GPU
